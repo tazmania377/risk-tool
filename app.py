@@ -1,5 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
+
 
 # Title
 st.markdown('<h1 style="color: #2E5A88;">Risk Calculator Tool</h1>', unsafe_allow_html=True)
@@ -118,15 +118,4 @@ st.markdown(f"""
 # Adding some space
 st.write("\n")
 
-# Pie Chart for Risk Breakdown
-def plot_pie_chart(severity, probability, combined_score):
-    labels = ['Severity', 'Probability', 'Combined Risk']
-    scores = [severity, probability, combined_score]
-    colors = ['#FFDDDD', '#FFD9A1', '#D4F8E3']  # Using pastel colors
-    fig, ax = plt.subplots()
-    ax.pie(scores, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
-    ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    st.pyplot(fig)
 
-# Display Pie Chart
-plot_pie_chart(severity, probability, combined_score)
